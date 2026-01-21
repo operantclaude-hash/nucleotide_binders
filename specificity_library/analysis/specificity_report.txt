@@ -1,0 +1,118 @@
+================================================================================
+SPECIFICITY SCREENING ANALYSIS REPORT
+================================================================================
+
+Total variants analyzed: 197
+
+TOP 10 SPECIFIC BINDERS (Combined Score)
+--------------------------------------------------------------------------------
+
+1. dTTP_variant_016 (dTTP)
+   Mutations: C96N,K98R,S100A
+   Target conf: 0.8848
+   Specificity: 1.11x
+   Combined: 0.9802
+
+2. dTTP_variant_045 (dTTP)
+   Mutations: C96N,V99I,S100G
+   Target conf: 0.9031
+   Specificity: 1.07x
+   Combined: 0.9641
+
+3. dCTP_variant_048 (dCTP)
+   Mutations: C96S,A97F,S100Q,Y101E
+   Target conf: 0.8858
+   Specificity: 1.08x
+   Combined: 0.9580
+
+4. dCTP_variant_037 (dCTP)
+   Mutations: C96S,A97Y,K98H,V99A,S100Q
+   Target conf: 0.8937
+   Specificity: 1.07x
+   Combined: 0.9571
+
+5. dATP_variant_039 (dATP)
+   Mutations: A97W,K98R,S100T,Y101D
+   Target conf: 0.9059
+   Specificity: 1.05x
+   Combined: 0.9475
+
+6. dCTP_variant_012 (dCTP)
+   Mutations: C96N,A97Y,S100N,Y101D
+   Target conf: 0.8776
+   Specificity: 1.06x
+   Combined: 0.9296
+
+7. dTTP_variant_029 (dTTP)
+   Mutations: C96Q,V99I,S100G,Y101S
+   Target conf: 0.8789
+   Specificity: 1.06x
+   Combined: 0.9290
+
+8. dGTP_variant_019 (dGTP)
+   Mutations: C96T,K98R,V99I
+   Target conf: 0.8895
+   Specificity: 1.04x
+   Combined: 0.9255
+
+9. dCTP_variant_018 (dCTP)
+   Mutations: C96S,K98R,S100Q
+   Target conf: 0.8969
+   Specificity: 1.03x
+   Combined: 0.9248
+
+10. dATP_variant_047 (dATP)
+   Mutations: C96S,K98R,Y101D
+   Target conf: 0.8772
+   Specificity: 1.05x
+   Combined: 0.9219
+
+
+================================================================================
+BEST BINDER PER NUCLEOTIDE
+================================================================================
+
+dATP:
+  dATP_variant_039
+  Mutations: A97W,K98R,S100T,Y101D
+  Target confidence: 0.9059
+  Specificity ratio: 1.05x
+  Individual scores:
+    ★ dATP: 0.9059
+      dGTP: 0.8583
+      dCTP: 0.8667
+      dTTP: 0.8732
+
+dGTP:
+  dGTP_variant_019
+  Mutations: C96T,K98R,V99I
+  Target confidence: 0.8895
+  Specificity ratio: 1.04x
+  Individual scores:
+      dATP: 0.8698
+    ★ dGTP: 0.8895
+      dCTP: 0.8023
+      dTTP: 0.8927
+
+dCTP:
+  dCTP_variant_048
+  Mutations: C96S,A97F,S100Q,Y101E
+  Target confidence: 0.8858
+  Specificity ratio: 1.08x
+  Individual scores:
+      dATP: 0.8353
+      dGTP: 0.8078
+    ★ dCTP: 0.8858
+      dTTP: 0.8140
+
+dTTP:
+  dTTP_variant_016
+  Mutations: C96N,K98R,S100A
+  Target confidence: 0.8848
+  Specificity ratio: 1.11x
+  Individual scores:
+      dATP: 0.7915
+      dGTP: 0.8452
+      dCTP: 0.7595
+    ★ dTTP: 0.8848
+

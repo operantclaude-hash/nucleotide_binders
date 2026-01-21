@@ -1,0 +1,15 @@
+# Quick ChimeraX Viewer (Mac)
+# Run with: chimerax dTTP_variant_016_dTTP_simple_mac.cxc
+
+open /Users/jeremylinsley/Documents/protein_modeling/structures/dTTP_variant_016_vs_dTTP_model_0.cif
+preset "Overall Look" "publication 1"
+color /A wheat
+color /B green
+show /B atoms
+style /B ball
+select /A & <5 /B
+color sel cyan
+show sel atoms
+style sel stick
+hbonds /A to /B
+view

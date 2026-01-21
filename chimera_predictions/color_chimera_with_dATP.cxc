@@ -1,0 +1,112 @@
+# ChimeraX Script: Color Chimera + dATP Complex
+# Shows optogenetic chimera with bound nucleotide
+# Run with: chimerax color_chimera_with_dATP.cxc
+
+# ============================================================
+# UPDATE THIS PATH to your new AlphaFold structure file:
+# ============================================================
+open /Users/jeremylinsley/Documents/protein_modeling/alphaFoldStructures/YOUR_NEW_FOLDER/YOUR_FILENAME.pdb
+# ============================================================
+
+# Setup
+preset "Overall Look" "publication 1"
+lighting soft
+set bgColor white
+
+# ===== COLOR PROTEIN DOMAINS =====
+
+hide atoms
+cartoon
+
+# Nanobody binder parts (CYAN)
+color /A:1-74,342-388 cyan
+cartoon style /A:1-74,342-388 width 2.5 thick 1.0
+
+# DRONPA - Optogenetic switch (ORANGE)
+color /A:82-334 orange
+cartoon style /A:82-334 width 2.5 thick 1.0
+
+# CDR3 binding site (RED)
+color /A:363-369 red
+show /A:363-369 atoms
+style /A:363-369 stick
+cartoon style /A:363-369 width 3.0 thick 1.2
+
+# A-Catcher tag (GREEN)
+color /A:394-409 green
+cartoon style /A:394-409 width 2.0 thick 0.8
+
+# Linkers (GRAY)
+color /A:75-81,335-341,389-393 gray
+cartoon style /A:75-81,335-341,389-393 width 1.0 thick 0.5
+
+# ===== COLOR dATP NUCLEOTIDE (Chain B or ligand) =====
+
+# dATP nucleotide in BRIGHT LIME GREEN
+color /B lime
+show /B atoms
+style /B ball
+
+# Alternative if ligand is named differently:
+# color ligand lime
+# show ligand atoms
+# style ligand ball
+
+# ===== SHOW BINDING INTERACTIONS =====
+
+# Show residues within 5Å of dATP (binding pocket)
+select /A & <5 /B
+color sel hotpink
+show sel atoms
+style sel stick
+~select
+
+# Show hydrogen bonds between protein and dATP
+hbonds /A to /B
+hbonds style dashed
+hbonds color yellow width 3
+
+# ===== VIEW SETTINGS =====
+
+# Center on binding site + nucleotide
+view /A:363-369,/B
+zoom 0.8
+
+# ===== LABELS =====
+
+# Add text labels for key regions
+2dlabels create "dATP" text "dATP Nucleotide" color lime size 28
+2dlabels create "Dronpa" text "DRONPA Switch" color orange size 24
+2dlabels create "CDR3" text "Binding Site" color red size 24
+
+# Print summary
+log text "=========================================="
+log text "CHIMERA + dATP STRUCTURE COLORED"
+log text "=========================================="
+log text ""
+log text "PROTEIN DOMAINS:"
+log text "  CYAN:   Nanobody binder (res 1-74, 342-388)"
+log text "  ORANGE: Dronpa optogenetic switch (res 82-334)"
+log text "  RED:    CDR3 binding site (res 363-369)"
+log text "  GREEN:  A-Catcher tag (res 394-409)"
+log text "  GRAY:   Flexible linkers"
+log text ""
+log text "LIGAND:"
+log text "  LIME:   dATP nucleotide"
+log text "  PINK:   Binding pocket residues (<5Å)"
+log text "  YELLOW: Hydrogen bonds (dashed)"
+log text ""
+log text "=========================================="
+log text "CRITICAL ASSESSMENT:"
+log text "Can dATP (lime) still bind to CDR3 (red)"
+log text "with Dronpa (orange) inserted?"
+log text "=========================================="
+
+# Optional: Save rotated views
+# Uncomment to auto-save images:
+# turn y 1 180
+# wait 180
+# save ~/Documents/protein_modeling/visualizations/chimera_dATP_front.png width 1600 height 1200 supersample 3
+# turn y 90
+# wait 60
+# save ~/Documents/protein_modeling/visualizations/chimera_dATP_side.png width 1600 height 1200 supersample 3

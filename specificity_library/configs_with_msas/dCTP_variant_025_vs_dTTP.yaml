@@ -1,0 +1,9 @@
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVNYLSTASSLDYWGQGTLVTVSS
+    msa: /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/msas/dCTP_variant_025/A.a3m
+- ligand:
+    id: B
+    smiles: Cc1cn([C@H]2C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O2)c(=O)[nH]c1=O

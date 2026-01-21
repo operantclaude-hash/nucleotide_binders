@@ -1,0 +1,110 @@
+# ChimeraX Script to Color Chimera Domains
+# dATP-binding Nanobody + Dronpa + A-Catcher
+#
+# Run with: chimerax color_chimera_domains.cxc
+# Or adjust the path below to point to your PDB file
+
+# Open the structure (UPDATE THIS PATH!)
+open /Users/jeremylinsley/Documents/protein_modeling/structures/chimera_alphafold.pdb
+
+# Basic setup
+preset "Overall Look" "publication 1"
+lighting soft
+set bgColor white
+
+# Show as cartoon
+hide atoms
+cartoon
+
+# Color by domain architecture:
+
+# 1. Nanobody N-terminal (residues 1-74) - CYAN
+color /A:1-74 cyan
+cartoon style /A:1-74 width 2.5 thick 1.0
+
+# 2. Linker 1 (residues 75-81) - GRAY
+color /A:75-81 gray
+cartoon style /A:75-81 width 1.0 thick 0.5
+
+# 3. DRONPA - Optogenetic Switch (residues 82-334) - ORANGE
+color /A:82-334 orange
+cartoon style /A:82-334 width 2.5 thick 1.0
+
+# 4. Linker 2 (residues 335-341) - GRAY
+color /A:335-341 gray
+cartoon style /A:335-341 width 1.0 thick 0.5
+
+# 5. Nanobody C-terminal (residues 342-388) - CYAN
+color /A:342-388 cyan
+cartoon style /A:342-388 width 2.5 thick 1.0
+
+# 6. CDR3 binding loop (residues 363-369) - RED (highlight!)
+color /A:363-369 red
+show /A:363-369 atoms
+style /A:363-369 stick
+cartoon style /A:363-369 width 3.0 thick 1.2
+
+# 7. Linker 3 (residues 389-393) - GRAY
+color /A:389-393 gray
+cartoon style /A:389-393 width 1.0 thick 0.5
+
+# 8. A-Catcher tag (residues 394-409) - GREEN
+color /A:394-409 green
+cartoon style /A:394-409 width 2.0 thick 0.8
+
+# Add labels for key domains
+2dlabels create "Nanobody N" text "Nanobody Binder" color cyan size 24
+2dlabels create "Dronpa" text "OPTOGENETIC SWITCH (Dronpa)" color orange size 28
+2dlabels create "CDR3" text "Binding Site" color red size 24
+2dlabels create "A-Catcher" text "Readout Tag" color green size 20
+
+# Orient for best view
+view
+
+# Save images
+turn y 1 180
+wait 180
+
+# Front view
+save /Users/jeremylinsley/Documents/protein_modeling/visualizations/chimera_colored_front.png width 1600 height 1200 supersample 3
+
+# Rotate for side view
+turn y 90
+wait 60
+save /Users/jeremylinsley/Documents/protein_modeling/visualizations/chimera_colored_side.png width 1600 height 1200 supersample 3
+
+# Top view
+turn x 90
+wait 60
+save /Users/jeremylinsley/Documents/protein_modeling/visualizations/chimera_colored_top.png width 1600 height 1200 supersample 3
+
+# Close-up on Dronpa domain
+view /A:82-334
+zoom 0.8
+save /Users/jeremylinsley/Documents/protein_modeling/visualizations/chimera_dronpa_closeup.png width 1600 height 1200 supersample 3
+
+# Close-up on CDR3 binding site
+view /A:363-369
+zoom 0.6
+save /Users/jeremylinsley/Documents/protein_modeling/visualizations/chimera_binding_site_closeup.png width 1600 height 1200 supersample 3
+
+# Return to full view
+view
+
+# Save session
+save /Users/jeremylinsley/Documents/protein_modeling/visualizations/chimera_colored_session.cxs
+
+# Print domain summary
+log text "Domain Architecture Summary:"
+log text "  Residues 1-74:     Nanobody N-term (CYAN)"
+log text "  Residues 75-81:    Linker 1 (GRAY)"
+log text "  Residues 82-334:   DRONPA - Optogenetic Switch (ORANGE)"
+log text "  Residues 335-341:  Linker 2 (GRAY)"
+log text "  Residues 342-388:  Nanobody C-term (CYAN)"
+log text "  Residues 363-369:  CDR3 Binding Site (RED) ← HIGHLIGHTED"
+log text "  Residues 389-393:  Linker 3 (GRAY)"
+log text "  Residues 394-409:  A-Catcher Tag (GREEN)"
+
+log text ""
+log text "Total: 409 amino acids"
+log text "Dronpa insertion: 253 aa optogenetic switch"

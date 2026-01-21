@@ -1,0 +1,36 @@
+# Simple ChimeraX Script for Chimera Domain Coloring
+# Quick visualization - no automatic screenshots
+#
+# UPDATE THE PATH BELOW to point to your AlphaFold PDB file!
+
+# Open structure
+open /Users/jeremylinsley/Documents/protein_modeling/structures/chimera_alphafold.pdb
+
+# Setup
+preset "Overall Look" "publication 1"
+lighting soft
+set bgColor white
+hide atoms
+cartoon
+
+# Color domains:
+# Nanobody binder (cyan)
+color /A:1-74 cyan
+color /A:342-388 cyan
+
+# Dronpa optogenetic switch (orange)
+color /A:82-334 orange
+
+# CDR3 binding site (red - HIGHLIGHT!)
+color /A:363-369 red
+show /A:363-369 atoms
+style /A:363-369 stick
+
+# A-Catcher readout tag (green)
+color /A:394-409 green
+
+# Linkers (gray)
+color /A:75-81,335-341,389-393 gray
+
+# Best view
+view

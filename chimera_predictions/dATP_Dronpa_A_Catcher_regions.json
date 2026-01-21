@@ -1,0 +1,42 @@
+{
+  "nanobody_n": {
+    "start": 1,
+    "end": 74,
+    "color": "cyan"
+  },
+  "linker1": {
+    "start": 75,
+    "end": 81,
+    "color": "gray"
+  },
+  "dronpa": {
+    "start": 82,
+    "end": 334,
+    "color": "orange"
+  },
+  "linker2": {
+    "start": 335,
+    "end": 341,
+    "color": "gray"
+  },
+  "nanobody_c": {
+    "start": 342,
+    "end": 388,
+    "color": "cyan"
+  },
+  "cdr3": {
+    "start": 363,
+    "end": 369,
+    "color": "red"
+  },
+  "linker3": {
+    "start": 389,
+    "end": 393,
+    "color": "gray"
+  },
+  "a_catcher": {
+    "start": 394,
+    "end": 409,
+    "color": "green"
+  }
+}

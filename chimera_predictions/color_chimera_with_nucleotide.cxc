@@ -1,0 +1,102 @@
+# ChimeraX Script: Chimera with dATP Nucleotide
+# This script:
+# 1. Opens your chimera structure
+# 2. Opens the original nanobody+dATP structure
+# 3. Aligns them to show where dATP binds
+# 4. Colors everything beautifully
+
+# ===== OPEN STRUCTURES =====
+
+# Open your chimera structure
+open /Users/jeremylinsley/Documents/protein_modeling/alphaFoldStructures/test_a7de6/test_a7de6_unrelaxed_rank_002_alphafold2_ptm_model_1_seed_000.pdb
+
+# Open original nanobody+dATP structure (from your earlier predictions)
+# UPDATE THIS PATH to where you have the original dATP_variant_039 structure:
+open /Users/jeremylinsley/Documents/protein_modeling/structures/dATP_variant_039_vs_dATP_model_0.cif
+
+# ===== ALIGN STRUCTURES =====
+
+# Align the nanobody regions (exclude Dronpa for better alignment)
+# Model #1 is chimera, Model #2 is original nanobody
+matchmaker #1/A:1-74,342-388 to #2/A
+
+# ===== COLOR CHIMERA (Model #1) =====
+
+# Nanobody parts (cyan)
+color #1/A:1-74,342-388 cyan
+cartoon style #1/A:1-74,342-388 width 2.5 thick 1.0
+
+# Dronpa (orange)
+color #1/A:82-334 orange
+cartoon style #1/A:82-334 width 2.5 thick 1.0
+
+# CDR3 binding site (red)
+color #1/A:363-369 red
+show #1/A:363-369 atoms
+style #1/A:363-369 stick
+cartoon style #1/A:363-369 width 3.0 thick 1.2
+
+# A-Catcher (green)
+color #1/A:394-409 green
+
+# Linkers (gray)
+color #1/A:75-81,335-341,389-393 gray
+
+# ===== COLOR ORIGINAL NANOBODY (Model #2) =====
+
+# Make it semi-transparent to see chimera better
+transparency #2 50
+
+# Color protein wheat
+color #2/A wheat
+
+# Highlight the nucleotide (dATP) in bright green
+color #2/B lime
+show #2/B atoms
+style #2/B ball
+
+# Show binding site on original
+select #2/A & <5 #2/B
+color sel hotpink
+show sel atoms
+style sel stick
+~select
+
+# ===== VIEW SETUP =====
+
+hide #1 atoms
+hide #2 atoms
+show #2/B atoms
+cartoon #1
+cartoon #2
+
+# Center on binding site
+view #1/A:363-369,#2/B
+
+# ===== LABELS =====
+
+log text "=========================================="
+log text "CHIMERA + dATP NUCLEOTIDE"
+log text "=========================================="
+log text ""
+log text "Model #1 (Chimera):"
+log text "  CYAN:   Nanobody"
+log text "  ORANGE: Dronpa optogenetic switch"
+log text "  RED:    CDR3 binding site"
+log text "  GREEN:  A-Catcher tag"
+log text ""
+log text "Model #2 (Original nanobody):"
+log text "  WHEAT:  Original nanobody (transparent)"
+log text "  LIME:   dATP nucleotide ← WHERE IT BINDS!"
+log text "  PINK:   Binding site residues"
+log text ""
+log text "=========================================="
+log text "KEY QUESTION:"
+log text "Can the LIME dATP still bind to the RED CDR3"
+log text "even with the ORANGE Dronpa inserted?"
+log text "=========================================="
+
+# Optional: Hide original nanobody to see just chimera + nucleotide
+# Uncomment to hide the reference structure:
+# hide #2 models
+# show #2/B atoms

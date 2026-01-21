@@ -1,0 +1,12 @@
+version: 1
+
+sequences:
+  - protein:
+      id: A
+      sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVSYLSTASSLDYWGQGTLVTVSS
+  - ligand:
+      id: B
+      smiles: "Nc1nc2c(ncn2[C@H]3C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O3)c(=O)[nH]1"
+
+# Target: Design nanobody to bind dGTP specifically
+# Reference PDB: 3G9A (DNA polymerase with dGTP)

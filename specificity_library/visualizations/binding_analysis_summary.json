@@ -1,0 +1,46 @@
+[
+  {
+    "variant_id": "dATP_variant_039",
+    "target": "dATP",
+    "confidence_metrics": {
+      "confidence_score": 0.9058660864830017,
+      "ligand_iptm": 0.8023755550384521,
+      "complex_plddt": 0.9317386746406555
+    },
+    "mutations": "A97W,K98R,S100T,Y101D",
+    "prediction_time": 38.98812532424927
+  },
+  {
+    "variant_id": "dGTP_variant_019",
+    "target": "dGTP",
+    "confidence_metrics": {
+      "confidence_score": 0.8895307779312134,
+      "ligand_iptm": 0.8805197477340698,
+      "complex_plddt": 0.8917835354804993
+    },
+    "mutations": "C96T,K98R,V99I",
+    "prediction_time": 37.978919506073
+  },
+  {
+    "variant_id": "dCTP_variant_048",
+    "target": "dCTP",
+    "confidence_metrics": {
+      "confidence_score": 0.8858049511909485,
+      "ligand_iptm": 0.8552752733230591,
+      "complex_plddt": 0.8934373259544373
+    },
+    "mutations": "C96S,A97F,S100Q,Y101E",
+    "prediction_time": 37.88263702392578
+  },
+  {
+    "variant_id": "dTTP_variant_016",
+    "target": "dTTP",
+    "confidence_metrics": {
+      "confidence_score": 0.8848364949226379,
+      "ligand_iptm": 0.8532705307006836,
+      "complex_plddt": 0.8927279710769653
+    },
+    "mutations": "C96N,K98R,S100A",
+    "prediction_time": 37.821524143218994
+  }
+]

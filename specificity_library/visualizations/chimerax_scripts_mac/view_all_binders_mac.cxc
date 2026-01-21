@@ -1,0 +1,69 @@
+# ChimeraX Master Script (Mac Version)
+# Opens all 4 top binders in tile view for comparison
+# Run with: chimerax view_all_binders_mac.cxc
+
+# Set up tiled viewing
+windowsize 1920 1080
+tile
+
+
+# Open variant 1: dATP_variant_039
+open /Users/jeremylinsley/Documents/protein_modeling/structures/dATP_variant_039_vs_dATP_model_0.cif name model1
+color model1/A tan
+color model1/B green
+show model1/B atoms
+style model1/B ball
+select model1/A & <5 model1/B
+color sel cyan
+show sel atoms
+style sel stick
+~select
+view model1
+
+
+# Open variant 2: dTTP_variant_016
+open /Users/jeremylinsley/Documents/protein_modeling/structures/dTTP_variant_016_vs_dTTP_model_0.cif name model2
+color model2/A tan
+color model2/B green
+show model2/B atoms
+style model2/B ball
+select model2/A & <5 model2/B
+color sel cyan
+show sel atoms
+style sel stick
+~select
+view model2
+
+
+# Open variant 3: dGTP_variant_019
+open /Users/jeremylinsley/Documents/protein_modeling/structures/dGTP_variant_019_vs_dGTP_model_0.cif name model3
+color model3/A tan
+color model3/B green
+show model3/B atoms
+style model3/B ball
+select model3/A & <5 model3/B
+color sel cyan
+show sel atoms
+style sel stick
+~select
+view model3
+
+
+# Open variant 4: dCTP_variant_048
+open /Users/jeremylinsley/Documents/protein_modeling/structures/dCTP_variant_048_vs_dCTP_model_0.cif name model4
+color model4/A tan
+color model4/B green
+show model4/B atoms
+style model4/B ball
+select model4/A & <5 model4/B
+color sel cyan
+show sel atoms
+style sel stick
+~select
+view model4
+
+
+# Adjust view
+tile
+lighting soft
+set bgColor white

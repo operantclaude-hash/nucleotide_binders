@@ -1,0 +1,37 @@
+================================================================================
+SPECIFICITY SCREENING ANALYSIS REPORT
+================================================================================
+
+Total variants analyzed: 2
+
+TOP 10 SPECIFIC BINDERS (Combined Score)
+--------------------------------------------------------------------------------
+
+1. dATP_variant_001 (dATP)
+   Mutations: A97F,K98R
+   Target conf: 0.8516
+   Specificity: 1.01x
+   Combined: 0.8631
+
+2. dATP_variant_000_WT (dATP)
+   Mutations: WT
+   Target conf: 0.8153
+   Specificity: 0.99x
+   Combined: 0.8053
+
+
+================================================================================
+BEST BINDER PER NUCLEOTIDE
+================================================================================
+
+dATP:
+  dATP_variant_001
+  Mutations: A97F,K98R
+  Target confidence: 0.8516
+  Specificity ratio: 1.01x
+  Individual scores:
+    ★ dATP: 0.8516
+      dGTP: 0.8309
+      dCTP: 0.8647
+      dTTP: 0.8252
+

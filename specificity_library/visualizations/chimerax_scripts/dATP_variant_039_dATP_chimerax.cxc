@@ -1,0 +1,84 @@
+# ChimeraX Visualization Script
+# Variant: dATP_variant_039
+# Target: dATP
+# Run with: chimerax dATP_variant_039_dATP_chimerax.cxc
+
+# Open structure
+open /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/screening_results/dATP_variant_039_vs_dATP/boltz_results_dATP_variant_039_vs_dATP/predictions/dATP_variant_039_vs_dATP/dATP_variant_039_vs_dATP_model_0.cif
+
+# Basic setup
+preset "Overall Look" publication
+lighting soft
+set bgColor white
+
+# Color protein and ligand
+color /A tan
+color /B green
+
+# Show protein as cartoon
+hide /A atoms
+cartoon /A
+
+# Show ligand as ball-and-stick
+show /B atoms
+style /B ball
+
+# Highlight CDR3 region (residues 95-101)
+color /A:95-101 orange
+show /A:95-101 atoms
+style /A:95-101 stick
+
+# Find and display binding site residues (within 5Å of ligand)
+select /A & <5 /B
+color sel cyan
+show sel atoms
+style sel stick
+~select
+
+# Show hydrogen bonds
+hbonds /A to /B
+hbonds style dashed
+hbonds color yellow
+
+# Orient for best view
+view
+
+# Save session
+save /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/visualizations/chimerax_scripts/dATP_variant_039_dATP_session.cxs
+
+# Save images
+turn y 1 120
+wait 120
+# Front view
+save /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/visualizations/chimerax_scripts/dATP_variant_039_dATP_front.png width 1200 height 900 supersample 3
+# Rotate for side view
+turn y 90
+wait 60
+save /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/visualizations/chimerax_scripts/dATP_variant_039_dATP_side.png width 1200 height 900 supersample 3
+# Rotate for top view
+turn x 90
+wait 60
+save /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/visualizations/chimerax_scripts/dATP_variant_039_dATP_top.png width 1200 height 900 supersample 3
+
+# Focus on binding site
+view /B
+cofr /B
+zoom 0.5
+save /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/visualizations/chimerax_scripts/dATP_variant_039_dATP_binding_site.png width 1200 height 900 supersample 3
+
+# Close-up of CDR3 and ligand interaction
+view /A:95-101 | /B
+zoom 0.7
+save /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/visualizations/chimerax_scripts/dATP_variant_039_dATP_CDR3_closeup.png width 1200 height 900 supersample 3
+
+# Optional: Create a spinning movie
+# movie record
+# turn y 2 180
+# wait 180
+# movie encode /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/visualizations/chimerax_scripts/dATP_variant_039_dATP_rotation.mp4
+
+log save /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/visualizations/chimerax_scripts/dATP_variant_039_dATP_log.txt
+
+# Keep session open for interactive exploration
+# Or uncomment to close automatically:
+# exit

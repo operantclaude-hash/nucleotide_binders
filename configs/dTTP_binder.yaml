@@ -1,0 +1,12 @@
+version: 1
+
+sequences:
+  - protein:
+      id: A
+      sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVSYLSTASSLDYWGQGTLVTVSS
+  - ligand:
+      id: B
+      smiles: "Cc1cn([C@H]2C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O2)c(=O)[nH]c1=O"
+
+# Target: Design nanobody to bind dTTP specifically
+# Reference PDB: 6IR1 (DNA polymerase with dTTP)

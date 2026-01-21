@@ -1,0 +1,710 @@
+library_size: 20
+total_predictions: 80
+nucleotides:
+- dATP
+- dGTP
+- dCTP
+- dTTP
+variants:
+- id: dATP_variant_000_WT
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVSYLSTASSLDYWGQGTLVTVSS
+  mutations: WT
+  target: dATP
+  strategy: Wild-type control
+- id: dATP_variant_001
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCFRVSYLSTASSLDYWGQGTLVTVSS
+  mutations: A97F,K98R
+  target: dATP
+  strategy: Target 6-amino group (unique to A) with H-bond acceptors (N,Q,S). Use
+    aromatics for stacking. Accommodate purine size.
+- id: dATP_variant_002
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYQYRVSDLSTASSLDYWGQGTLVTVSS
+  mutations: C96Q,A97Y,K98R,Y101D
+  target: dATP
+  strategy: Target 6-amino group (unique to A) with H-bond acceptors (N,Q,S). Use
+    aromatics for stacking. Accommodate purine size.
+- id: dATP_variant_003
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYQARVSELSTASSLDYWGQGTLVTVSS
+  mutations: C96Q,K98R,Y101E
+  target: dATP
+  strategy: Target 6-amino group (unique to A) with H-bond acceptors (N,Q,S). Use
+    aromatics for stacking. Accommodate purine size.
+- id: dATP_variant_004
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYQFKVSELSTASSLDYWGQGTLVTVSS
+  mutations: C96Q,A97F,Y101E
+  target: dATP
+  strategy: Target 6-amino group (unique to A) with H-bond acceptors (N,Q,S). Use
+    aromatics for stacking. Accommodate purine size.
+- id: dGTP_variant_000_WT
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVSYLSTASSLDYWGQGTLVTVSS
+  mutations: WT
+  target: dGTP
+  strategy: Wild-type control
+- id: dGTP_variant_001
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYNAKVSSLSTASSLDYWGQGTLVTVSS
+  mutations: C96N,Y101S
+  target: dGTP
+  strategy: Target 6-keto (unique to G) with H-bond donors (N,Q). Recognize N1-H.
+    Purine-sized pocket.
+- id: dGTP_variant_002
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVQYLSTASSLDYWGQGTLVTVSS
+  mutations: S100Q
+  target: dGTP
+  strategy: Target 6-keto (unique to G) with H-bond donors (N,Q). Recognize N1-H.
+    Purine-sized pocket.
+- id: dGTP_variant_003
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYNWKVSTLSTASSLDYWGQGTLVTVSS
+  mutations: C96N,A97W,Y101T
+  target: dGTP
+  strategy: Target 6-keto (unique to G) with H-bond donors (N,Q). Recognize N1-H.
+    Purine-sized pocket.
+- id: dGTP_variant_004
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYTARVSSLSTASSLDYWGQGTLVTVSS
+  mutations: C96T,K98R,Y101S
+  target: dGTP
+  strategy: Target 6-keto (unique to G) with H-bond donors (N,Q). Recognize N1-H.
+    Purine-sized pocket.
+- id: dCTP_variant_000_WT
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVSYLSTASSLDYWGQGTLVTVSS
+  mutations: WT
+  target: dCTP
+  strategy: Wild-type control
+- id: dCTP_variant_001
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCFHVNELSTASSLDYWGQGTLVTVSS
+  mutations: A97F,K98H,S100N,Y101E
+  target: dCTP
+  strategy: Tighter pocket for smaller pyrimidine. Target 4-amino with H-bond acceptors.
+    Exclude purines by size.
+- id: dCTP_variant_002
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYSYKVQDLSTASSLDYWGQGTLVTVSS
+  mutations: C96S,A97Y,S100Q,Y101D
+  target: dCTP
+  strategy: Tighter pocket for smaller pyrimidine. Target 4-amino with H-bond acceptors.
+    Exclude purines by size.
+- id: dCTP_variant_003
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCARVQELSTASSLDYWGQGTLVTVSS
+  mutations: K98R,S100Q,Y101E
+  target: dCTP
+  strategy: Tighter pocket for smaller pyrimidine. Target 4-amino with H-bond acceptors.
+    Exclude purines by size.
+- id: dCTP_variant_004
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYNAHVSELSTASSLDYWGQGTLVTVSS
+  mutations: C96N,K98H,Y101E
+  target: dCTP
+  strategy: Tighter pocket for smaller pyrimidine. Target 4-amino with H-bond acceptors.
+    Exclude purines by size.
+- id: dTTP_variant_000_WT
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKVSYLSTASSLDYWGQGTLVTVSS
+  mutations: WT
+  target: dTTP
+  strategy: Wild-type control
+- id: dTTP_variant_001
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYNYKVAYLSTASSLDYWGQGTLVTVSS
+  mutations: C96N,A97Y,S100A
+  target: dTTP
+  strategy: Hydrophobic pocket for 5-methyl group (unique to T). H-bond donor for
+    4-keto. Pyrimidine-sized pocket.
+- id: dTTP_variant_002
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYTFKLSTLSTASSLDYWGQGTLVTVSS
+  mutations: C96T,A97F,V99L,Y101T
+  target: dTTP
+  strategy: Hydrophobic pocket for 5-methyl group (unique to T). H-bond donor for
+    4-keto. Pyrimidine-sized pocket.
+- id: dTTP_variant_003
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYNAKVATLSTASSLDYWGQGTLVTVSS
+  mutations: C96N,S100A,Y101T
+  target: dTTP
+  strategy: Hydrophobic pocket for 5-methyl group (unique to T). H-bond donor for
+    4-keto. Pyrimidine-sized pocket.
+- id: dTTP_variant_004
+  sequence: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKISTLSTASSLDYWGQGTLVTVSS
+  mutations: V99I,Y101T
+  target: dTTP
+  strategy: Hydrophobic pocket for 5-methyl group (unique to T). H-bond donor for
+    4-keto. Pyrimidine-sized pocket.
+configs:
+- config_file: ../specificity_library_test/configs/dATP_variant_000_WT_vs_dATP.yaml
+  variant_id: dATP_variant_000_WT
+  target_nucleotide: dATP
+  test_nucleotide: dATP
+  mutations: WT
+  is_target: true
+- config_file: ../specificity_library_test/configs/dATP_variant_000_WT_vs_dGTP.yaml
+  variant_id: dATP_variant_000_WT
+  target_nucleotide: dATP
+  test_nucleotide: dGTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_000_WT_vs_dCTP.yaml
+  variant_id: dATP_variant_000_WT
+  target_nucleotide: dATP
+  test_nucleotide: dCTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_000_WT_vs_dTTP.yaml
+  variant_id: dATP_variant_000_WT
+  target_nucleotide: dATP
+  test_nucleotide: dTTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_001_vs_dATP.yaml
+  variant_id: dATP_variant_001
+  target_nucleotide: dATP
+  test_nucleotide: dATP
+  mutations: A97F,K98R
+  is_target: true
+- config_file: ../specificity_library_test/configs/dATP_variant_001_vs_dGTP.yaml
+  variant_id: dATP_variant_001
+  target_nucleotide: dATP
+  test_nucleotide: dGTP
+  mutations: A97F,K98R
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_001_vs_dCTP.yaml
+  variant_id: dATP_variant_001
+  target_nucleotide: dATP
+  test_nucleotide: dCTP
+  mutations: A97F,K98R
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_001_vs_dTTP.yaml
+  variant_id: dATP_variant_001
+  target_nucleotide: dATP
+  test_nucleotide: dTTP
+  mutations: A97F,K98R
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_002_vs_dATP.yaml
+  variant_id: dATP_variant_002
+  target_nucleotide: dATP
+  test_nucleotide: dATP
+  mutations: C96Q,A97Y,K98R,Y101D
+  is_target: true
+- config_file: ../specificity_library_test/configs/dATP_variant_002_vs_dGTP.yaml
+  variant_id: dATP_variant_002
+  target_nucleotide: dATP
+  test_nucleotide: dGTP
+  mutations: C96Q,A97Y,K98R,Y101D
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_002_vs_dCTP.yaml
+  variant_id: dATP_variant_002
+  target_nucleotide: dATP
+  test_nucleotide: dCTP
+  mutations: C96Q,A97Y,K98R,Y101D
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_002_vs_dTTP.yaml
+  variant_id: dATP_variant_002
+  target_nucleotide: dATP
+  test_nucleotide: dTTP
+  mutations: C96Q,A97Y,K98R,Y101D
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_003_vs_dATP.yaml
+  variant_id: dATP_variant_003
+  target_nucleotide: dATP
+  test_nucleotide: dATP
+  mutations: C96Q,K98R,Y101E
+  is_target: true
+- config_file: ../specificity_library_test/configs/dATP_variant_003_vs_dGTP.yaml
+  variant_id: dATP_variant_003
+  target_nucleotide: dATP
+  test_nucleotide: dGTP
+  mutations: C96Q,K98R,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_003_vs_dCTP.yaml
+  variant_id: dATP_variant_003
+  target_nucleotide: dATP
+  test_nucleotide: dCTP
+  mutations: C96Q,K98R,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_003_vs_dTTP.yaml
+  variant_id: dATP_variant_003
+  target_nucleotide: dATP
+  test_nucleotide: dTTP
+  mutations: C96Q,K98R,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_004_vs_dATP.yaml
+  variant_id: dATP_variant_004
+  target_nucleotide: dATP
+  test_nucleotide: dATP
+  mutations: C96Q,A97F,Y101E
+  is_target: true
+- config_file: ../specificity_library_test/configs/dATP_variant_004_vs_dGTP.yaml
+  variant_id: dATP_variant_004
+  target_nucleotide: dATP
+  test_nucleotide: dGTP
+  mutations: C96Q,A97F,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_004_vs_dCTP.yaml
+  variant_id: dATP_variant_004
+  target_nucleotide: dATP
+  test_nucleotide: dCTP
+  mutations: C96Q,A97F,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dATP_variant_004_vs_dTTP.yaml
+  variant_id: dATP_variant_004
+  target_nucleotide: dATP
+  test_nucleotide: dTTP
+  mutations: C96Q,A97F,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_000_WT_vs_dATP.yaml
+  variant_id: dGTP_variant_000_WT
+  target_nucleotide: dGTP
+  test_nucleotide: dATP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_000_WT_vs_dGTP.yaml
+  variant_id: dGTP_variant_000_WT
+  target_nucleotide: dGTP
+  test_nucleotide: dGTP
+  mutations: WT
+  is_target: true
+- config_file: ../specificity_library_test/configs/dGTP_variant_000_WT_vs_dCTP.yaml
+  variant_id: dGTP_variant_000_WT
+  target_nucleotide: dGTP
+  test_nucleotide: dCTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_000_WT_vs_dTTP.yaml
+  variant_id: dGTP_variant_000_WT
+  target_nucleotide: dGTP
+  test_nucleotide: dTTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_001_vs_dATP.yaml
+  variant_id: dGTP_variant_001
+  target_nucleotide: dGTP
+  test_nucleotide: dATP
+  mutations: C96N,Y101S
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_001_vs_dGTP.yaml
+  variant_id: dGTP_variant_001
+  target_nucleotide: dGTP
+  test_nucleotide: dGTP
+  mutations: C96N,Y101S
+  is_target: true
+- config_file: ../specificity_library_test/configs/dGTP_variant_001_vs_dCTP.yaml
+  variant_id: dGTP_variant_001
+  target_nucleotide: dGTP
+  test_nucleotide: dCTP
+  mutations: C96N,Y101S
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_001_vs_dTTP.yaml
+  variant_id: dGTP_variant_001
+  target_nucleotide: dGTP
+  test_nucleotide: dTTP
+  mutations: C96N,Y101S
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_002_vs_dATP.yaml
+  variant_id: dGTP_variant_002
+  target_nucleotide: dGTP
+  test_nucleotide: dATP
+  mutations: S100Q
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_002_vs_dGTP.yaml
+  variant_id: dGTP_variant_002
+  target_nucleotide: dGTP
+  test_nucleotide: dGTP
+  mutations: S100Q
+  is_target: true
+- config_file: ../specificity_library_test/configs/dGTP_variant_002_vs_dCTP.yaml
+  variant_id: dGTP_variant_002
+  target_nucleotide: dGTP
+  test_nucleotide: dCTP
+  mutations: S100Q
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_002_vs_dTTP.yaml
+  variant_id: dGTP_variant_002
+  target_nucleotide: dGTP
+  test_nucleotide: dTTP
+  mutations: S100Q
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_003_vs_dATP.yaml
+  variant_id: dGTP_variant_003
+  target_nucleotide: dGTP
+  test_nucleotide: dATP
+  mutations: C96N,A97W,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_003_vs_dGTP.yaml
+  variant_id: dGTP_variant_003
+  target_nucleotide: dGTP
+  test_nucleotide: dGTP
+  mutations: C96N,A97W,Y101T
+  is_target: true
+- config_file: ../specificity_library_test/configs/dGTP_variant_003_vs_dCTP.yaml
+  variant_id: dGTP_variant_003
+  target_nucleotide: dGTP
+  test_nucleotide: dCTP
+  mutations: C96N,A97W,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_003_vs_dTTP.yaml
+  variant_id: dGTP_variant_003
+  target_nucleotide: dGTP
+  test_nucleotide: dTTP
+  mutations: C96N,A97W,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_004_vs_dATP.yaml
+  variant_id: dGTP_variant_004
+  target_nucleotide: dGTP
+  test_nucleotide: dATP
+  mutations: C96T,K98R,Y101S
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_004_vs_dGTP.yaml
+  variant_id: dGTP_variant_004
+  target_nucleotide: dGTP
+  test_nucleotide: dGTP
+  mutations: C96T,K98R,Y101S
+  is_target: true
+- config_file: ../specificity_library_test/configs/dGTP_variant_004_vs_dCTP.yaml
+  variant_id: dGTP_variant_004
+  target_nucleotide: dGTP
+  test_nucleotide: dCTP
+  mutations: C96T,K98R,Y101S
+  is_target: false
+- config_file: ../specificity_library_test/configs/dGTP_variant_004_vs_dTTP.yaml
+  variant_id: dGTP_variant_004
+  target_nucleotide: dGTP
+  test_nucleotide: dTTP
+  mutations: C96T,K98R,Y101S
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_000_WT_vs_dATP.yaml
+  variant_id: dCTP_variant_000_WT
+  target_nucleotide: dCTP
+  test_nucleotide: dATP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_000_WT_vs_dGTP.yaml
+  variant_id: dCTP_variant_000_WT
+  target_nucleotide: dCTP
+  test_nucleotide: dGTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_000_WT_vs_dCTP.yaml
+  variant_id: dCTP_variant_000_WT
+  target_nucleotide: dCTP
+  test_nucleotide: dCTP
+  mutations: WT
+  is_target: true
+- config_file: ../specificity_library_test/configs/dCTP_variant_000_WT_vs_dTTP.yaml
+  variant_id: dCTP_variant_000_WT
+  target_nucleotide: dCTP
+  test_nucleotide: dTTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_001_vs_dATP.yaml
+  variant_id: dCTP_variant_001
+  target_nucleotide: dCTP
+  test_nucleotide: dATP
+  mutations: A97F,K98H,S100N,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_001_vs_dGTP.yaml
+  variant_id: dCTP_variant_001
+  target_nucleotide: dCTP
+  test_nucleotide: dGTP
+  mutations: A97F,K98H,S100N,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_001_vs_dCTP.yaml
+  variant_id: dCTP_variant_001
+  target_nucleotide: dCTP
+  test_nucleotide: dCTP
+  mutations: A97F,K98H,S100N,Y101E
+  is_target: true
+- config_file: ../specificity_library_test/configs/dCTP_variant_001_vs_dTTP.yaml
+  variant_id: dCTP_variant_001
+  target_nucleotide: dCTP
+  test_nucleotide: dTTP
+  mutations: A97F,K98H,S100N,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_002_vs_dATP.yaml
+  variant_id: dCTP_variant_002
+  target_nucleotide: dCTP
+  test_nucleotide: dATP
+  mutations: C96S,A97Y,S100Q,Y101D
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_002_vs_dGTP.yaml
+  variant_id: dCTP_variant_002
+  target_nucleotide: dCTP
+  test_nucleotide: dGTP
+  mutations: C96S,A97Y,S100Q,Y101D
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_002_vs_dCTP.yaml
+  variant_id: dCTP_variant_002
+  target_nucleotide: dCTP
+  test_nucleotide: dCTP
+  mutations: C96S,A97Y,S100Q,Y101D
+  is_target: true
+- config_file: ../specificity_library_test/configs/dCTP_variant_002_vs_dTTP.yaml
+  variant_id: dCTP_variant_002
+  target_nucleotide: dCTP
+  test_nucleotide: dTTP
+  mutations: C96S,A97Y,S100Q,Y101D
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_003_vs_dATP.yaml
+  variant_id: dCTP_variant_003
+  target_nucleotide: dCTP
+  test_nucleotide: dATP
+  mutations: K98R,S100Q,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_003_vs_dGTP.yaml
+  variant_id: dCTP_variant_003
+  target_nucleotide: dCTP
+  test_nucleotide: dGTP
+  mutations: K98R,S100Q,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_003_vs_dCTP.yaml
+  variant_id: dCTP_variant_003
+  target_nucleotide: dCTP
+  test_nucleotide: dCTP
+  mutations: K98R,S100Q,Y101E
+  is_target: true
+- config_file: ../specificity_library_test/configs/dCTP_variant_003_vs_dTTP.yaml
+  variant_id: dCTP_variant_003
+  target_nucleotide: dCTP
+  test_nucleotide: dTTP
+  mutations: K98R,S100Q,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_004_vs_dATP.yaml
+  variant_id: dCTP_variant_004
+  target_nucleotide: dCTP
+  test_nucleotide: dATP
+  mutations: C96N,K98H,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_004_vs_dGTP.yaml
+  variant_id: dCTP_variant_004
+  target_nucleotide: dCTP
+  test_nucleotide: dGTP
+  mutations: C96N,K98H,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dCTP_variant_004_vs_dCTP.yaml
+  variant_id: dCTP_variant_004
+  target_nucleotide: dCTP
+  test_nucleotide: dCTP
+  mutations: C96N,K98H,Y101E
+  is_target: true
+- config_file: ../specificity_library_test/configs/dCTP_variant_004_vs_dTTP.yaml
+  variant_id: dCTP_variant_004
+  target_nucleotide: dCTP
+  test_nucleotide: dTTP
+  mutations: C96N,K98H,Y101E
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_000_WT_vs_dATP.yaml
+  variant_id: dTTP_variant_000_WT
+  target_nucleotide: dTTP
+  test_nucleotide: dATP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_000_WT_vs_dGTP.yaml
+  variant_id: dTTP_variant_000_WT
+  target_nucleotide: dTTP
+  test_nucleotide: dGTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_000_WT_vs_dCTP.yaml
+  variant_id: dTTP_variant_000_WT
+  target_nucleotide: dTTP
+  test_nucleotide: dCTP
+  mutations: WT
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_000_WT_vs_dTTP.yaml
+  variant_id: dTTP_variant_000_WT
+  target_nucleotide: dTTP
+  test_nucleotide: dTTP
+  mutations: WT
+  is_target: true
+- config_file: ../specificity_library_test/configs/dTTP_variant_001_vs_dATP.yaml
+  variant_id: dTTP_variant_001
+  target_nucleotide: dTTP
+  test_nucleotide: dATP
+  mutations: C96N,A97Y,S100A
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_001_vs_dGTP.yaml
+  variant_id: dTTP_variant_001
+  target_nucleotide: dTTP
+  test_nucleotide: dGTP
+  mutations: C96N,A97Y,S100A
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_001_vs_dCTP.yaml
+  variant_id: dTTP_variant_001
+  target_nucleotide: dTTP
+  test_nucleotide: dCTP
+  mutations: C96N,A97Y,S100A
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_001_vs_dTTP.yaml
+  variant_id: dTTP_variant_001
+  target_nucleotide: dTTP
+  test_nucleotide: dTTP
+  mutations: C96N,A97Y,S100A
+  is_target: true
+- config_file: ../specificity_library_test/configs/dTTP_variant_002_vs_dATP.yaml
+  variant_id: dTTP_variant_002
+  target_nucleotide: dTTP
+  test_nucleotide: dATP
+  mutations: C96T,A97F,V99L,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_002_vs_dGTP.yaml
+  variant_id: dTTP_variant_002
+  target_nucleotide: dTTP
+  test_nucleotide: dGTP
+  mutations: C96T,A97F,V99L,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_002_vs_dCTP.yaml
+  variant_id: dTTP_variant_002
+  target_nucleotide: dTTP
+  test_nucleotide: dCTP
+  mutations: C96T,A97F,V99L,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_002_vs_dTTP.yaml
+  variant_id: dTTP_variant_002
+  target_nucleotide: dTTP
+  test_nucleotide: dTTP
+  mutations: C96T,A97F,V99L,Y101T
+  is_target: true
+- config_file: ../specificity_library_test/configs/dTTP_variant_003_vs_dATP.yaml
+  variant_id: dTTP_variant_003
+  target_nucleotide: dTTP
+  test_nucleotide: dATP
+  mutations: C96N,S100A,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_003_vs_dGTP.yaml
+  variant_id: dTTP_variant_003
+  target_nucleotide: dTTP
+  test_nucleotide: dGTP
+  mutations: C96N,S100A,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_003_vs_dCTP.yaml
+  variant_id: dTTP_variant_003
+  target_nucleotide: dTTP
+  test_nucleotide: dCTP
+  mutations: C96N,S100A,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_003_vs_dTTP.yaml
+  variant_id: dTTP_variant_003
+  target_nucleotide: dTTP
+  test_nucleotide: dTTP
+  mutations: C96N,S100A,Y101T
+  is_target: true
+- config_file: ../specificity_library_test/configs/dTTP_variant_004_vs_dATP.yaml
+  variant_id: dTTP_variant_004
+  target_nucleotide: dTTP
+  test_nucleotide: dATP
+  mutations: V99I,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_004_vs_dGTP.yaml
+  variant_id: dTTP_variant_004
+  target_nucleotide: dTTP
+  test_nucleotide: dGTP
+  mutations: V99I,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_004_vs_dCTP.yaml
+  variant_id: dTTP_variant_004
+  target_nucleotide: dTTP
+  test_nucleotide: dCTP
+  mutations: V99I,Y101T
+  is_target: false
+- config_file: ../specificity_library_test/configs/dTTP_variant_004_vs_dTTP.yaml
+  variant_id: dTTP_variant_004
+  target_nucleotide: dTTP
+  test_nucleotide: dTTP
+  mutations: V99I,Y101T
+  is_target: true
+design_strategies:
+  dATP:
+    target: Adenine - 6-amino group, purine
+    CDR3_mutations:
+      95:
+      - N
+      - Q
+      - S
+      96:
+      - Y
+      - F
+      - W
+      97:
+      - R
+      - K
+      98:
+      - L
+      - I
+      - V
+      99:
+      - S
+      - T
+      - N
+      100:
+      - D
+      - E
+    rationale: Target 6-amino group (unique to A) with H-bond acceptors (N,Q,S). Use
+      aromatics for stacking. Accommodate purine size.
+  dGTP:
+    target: Guanine - 6-keto, N1-H donor, purine
+    CDR3_mutations:
+      95:
+      - Q
+      - N
+      - T
+      96:
+      - F
+      - Y
+      - W
+      97:
+      - K
+      - R
+      98:
+      - I
+      - L
+      - M
+      99:
+      - N
+      - Q
+      - S
+      100:
+      - S
+      - T
+    rationale: Target 6-keto (unique to G) with H-bond donors (N,Q). Recognize N1-H.
+      Purine-sized pocket.
+  dCTP:
+    target: Cytosine - 4-amino, pyrimidine (smaller)
+    CDR3_mutations:
+      95:
+      - S
+      - T
+      - N
+      96:
+      - F
+      - Y
+      97:
+      - R
+      - K
+      - H
+      98:
+      - A
+      - V
+      99:
+      - Q
+      - N
+      100:
+      - D
+      - E
+    rationale: Tighter pocket for smaller pyrimidine. Target 4-amino with H-bond acceptors.
+      Exclude purines by size.
+  dTTP:
+    target: Thymine - 5-methyl, 4-keto, pyrimidine
+    CDR3_mutations:
+      95:
+      - Q
+      - N
+      - T
+      96:
+      - F
+      - Y
+      97:
+      - K
+      - R
+      98:
+      - V
+      - I
+      - L
+      99:
+      - A
+      - G
+      100:
+      - S
+      - T
+    rationale: Hydrophobic pocket for 5-methyl group (unique to T). H-bond donor for
+      4-keto. Pyrimidine-sized pocket.

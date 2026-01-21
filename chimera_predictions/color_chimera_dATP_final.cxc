@@ -1,0 +1,90 @@
+# ChimeraX Script: Color Chimera + dATP Complex
+# Final version with exact path
+# Run with: chimerax color_chimera_dATP_final.cxc
+
+# Open structure with dATP
+open /Users/jeremylinsley/Documents/protein_modeling/alphaFoldStructures/fold_2026_01_10_22_53/fold_2026_01_10_22_53_model_0.cif
+
+# Setup
+preset "Overall Look" "publication 1"
+lighting soft
+set bgColor white
+
+# ===== COLOR PROTEIN DOMAINS =====
+
+hide atoms
+cartoon
+
+# Nanobody binder parts (CYAN)
+color /A:1-74,342-388 cyan
+cartoon style /A:1-74,342-388 width 2.5 thick 1.0
+
+# DRONPA - Optogenetic switch (ORANGE)
+color /A:82-334 orange
+cartoon style /A:82-334 width 2.5 thick 1.0
+
+# CDR3 binding site (RED - this is the key!)
+color /A:363-369 red
+show /A:363-369 atoms
+style /A:363-369 stick
+cartoon style /A:363-369 width 3.0 thick 1.2
+
+# A-Catcher tag (GREEN)
+color /A:394-409 green
+cartoon style /A:394-409 width 2.0 thick 0.8
+
+# Linkers (GRAY)
+color /A:75-81,335-341,389-393 gray
+cartoon style /A:75-81,335-341,389-393 width 1.0 thick 0.5
+
+# ===== COLOR dATP NUCLEOTIDE =====
+
+# dATP in BRIGHT LIME GREEN (chain B)
+color /B lime
+show /B atoms
+style /B ball
+
+# ===== SHOW BINDING INTERACTIONS =====
+
+# Show residues within 5Å of dATP (binding pocket)
+select /A & <5 /B
+color sel hotpink
+show sel atoms
+style sel stick
+~select
+
+# Show hydrogen bonds between protein and dATP
+hbonds /A to /B
+hbonds style dashed
+hbonds color yellow width 3
+
+# ===== VIEW SETTINGS =====
+
+# Center on binding site + nucleotide
+view /A:363-369,/B
+zoom 0.7
+
+# ===== SUMMARY =====
+
+log text "=========================================="
+log text "CHIMERA + dATP COLORED SUCCESSFULLY"
+log text "=========================================="
+log text ""
+log text "PROTEIN DOMAINS:"
+log text "  CYAN:   Nanobody binder"
+log text "  ORANGE: Dronpa optogenetic switch ← 253 aa insert!"
+log text "  RED:    CDR3 binding site ← KEY REGION"
+log text "  GREEN:  A-Catcher tag"
+log text "  GRAY:   Linkers"
+log text ""
+log text "LIGAND & INTERACTIONS:"
+log text "  LIME:   dATP nucleotide"
+log text "  PINK:   Binding pocket residues"
+log text "  YELLOW: Hydrogen bonds (dashed lines)"
+log text ""
+log text "=========================================="
+log text "DOES IT WORK?"
+log text "Check if dATP (lime) can still access"
+log text "the RED binding site despite the huge"
+log text "ORANGE Dronpa domain!"
+log text "=========================================="

@@ -1,0 +1,66 @@
+# ChimeraX Script for Chimera Domain Coloring
+# Custom path for AlphaFold output
+#
+# INSTRUCTIONS:
+# 1. Update the path below to point to your AlphaFold PDB/CIF file
+# 2. Run with: chimerax color_chimera_custom_path.cxc
+
+# ============================================================
+# UPDATE THIS LINE with your actual file path:
+# ============================================================
+
+# Try one of these (uncomment the correct one):
+
+# If it's a CIF file:
+open /Users/jeremylinsley/Documents/protein_modeling/alphaFoldStructures/test_a7de6/fold_model_0.cif
+
+# Or if it's a PDB file:
+# open /Users/jeremylinsley/Documents/protein_modeling/alphaFoldStructures/test_a7de6/model.pdb
+
+# Or if named differently, replace with actual filename:
+# open /Users/jeremylinsley/Documents/protein_modeling/alphaFoldStructures/test_a7de6/YOUR_ACTUAL_FILENAME.pdb
+
+# ============================================================
+
+# Setup
+preset "Overall Look" "publication 1"
+lighting soft
+set bgColor white
+hide atoms
+cartoon
+
+# Color by domain:
+
+# Nanobody binder parts (CYAN)
+color /A:1-74 cyan
+color /A:342-388 cyan
+
+# DRONPA - Optogenetic switch (ORANGE)
+color /A:82-334 orange
+
+# CDR3 binding site (RED - highlighted with sticks)
+color /A:363-369 red
+show /A:363-369 atoms
+style /A:363-369 stick
+
+# A-Catcher readout tag (GREEN)
+color /A:394-409 green
+
+# Linkers (GRAY)
+color /A:75-81,335-341,389-393 gray
+
+# Best view
+view
+
+# Print domain info
+log text "==================================================="
+log text "DOMAIN COLORING APPLIED"
+log text "==================================================="
+log text "CYAN:   Nanobody binder (residues 1-74, 342-388)"
+log text "ORANGE: Dronpa optogenetic switch (residues 82-334)"
+log text "RED:    CDR3 binding site (residues 363-369)"
+log text "GREEN:  A-Catcher tag (residues 394-409)"
+log text "GRAY:   Flexible linkers"
+log text "==================================================="
+log text ""
+log text "KEY QUESTION: Is the RED binding loop accessible?"

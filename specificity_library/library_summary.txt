@@ -1,0 +1,52 @@
+================================================================================
+NUCLEOTIDE-SPECIFIC NANOBODY LIBRARY
+================================================================================
+
+Total variants: 197
+Total predictions: 788
+Predictions per variant: 4 (all nucleotides)
+
+
+dATP Variants: 49
+--------------------------------------------------------------------------------
+Strategy: Target 6-amino group (unique to A) with H-bond acceptors (N,Q,S). Use aromatics for stacking. Accommodate purine size.
+
+  dATP_variant_000_WT: WT
+  dATP_variant_001: A97F,K98R
+  dATP_variant_002: C96Q,A97Y,K98R,Y101D
+  dATP_variant_003: C96Q,K98R,Y101E
+  dATP_variant_004: C96Q,A97F,Y101E
+  ... and 44 more
+
+dGTP Variants: 50
+--------------------------------------------------------------------------------
+Strategy: Target 6-keto (unique to G) with H-bond donors (N,Q). Recognize N1-H. Purine-sized pocket.
+
+  dGTP_variant_000_WT: WT
+  dGTP_variant_001: C96Q,A97Y,S100Q
+  dGTP_variant_002: A97W,S100Q
+  dGTP_variant_003: A97W,V99I,Y101T
+  dGTP_variant_004: C96T,A97F,S100Q,Y101T
+  ... and 45 more
+
+dCTP Variants: 49
+--------------------------------------------------------------------------------
+Strategy: Tighter pocket for smaller pyrimidine. Target 4-amino with H-bond acceptors. Exclude purines by size.
+
+  dCTP_variant_000_WT: WT
+  dCTP_variant_001: K98R,S100Q,Y101D
+  dCTP_variant_002: C96S,K98H,V99A,S100N,Y101D
+  dCTP_variant_003: A97Y
+  dCTP_variant_004: C96T,Y101E
+  ... and 44 more
+
+dTTP Variants: 49
+--------------------------------------------------------------------------------
+Strategy: Hydrophobic pocket for 5-methyl group (unique to T). H-bond donor for 4-keto. Pyrimidine-sized pocket.
+
+  dTTP_variant_000_WT: WT
+  dTTP_variant_001: C96T,Y101T
+  dTTP_variant_002: C96Q,A97Y,V99L
+  dTTP_variant_003: C96N,S100A
+  dTTP_variant_004: C96N,K98R
+  ... and 44 more

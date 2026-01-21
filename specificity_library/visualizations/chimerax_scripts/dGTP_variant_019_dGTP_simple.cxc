@@ -1,0 +1,15 @@
+# Quick ChimeraX Viewer
+# Run with: chimerax dGTP_variant_019_dGTP_simple.cxc
+
+open /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/screening_results/dGTP_variant_019_vs_dGTP/boltz_results_dGTP_variant_019_vs_dGTP/predictions/dGTP_variant_019_vs_dGTP/dGTP_variant_019_vs_dGTP_model_0.cif
+preset publication
+color /A wheat
+color /B green
+show /B atoms
+style /B ball
+select /A & <5 /B
+color sel cyan
+show sel atoms
+style sel stick
+hbonds /A to /B
+view

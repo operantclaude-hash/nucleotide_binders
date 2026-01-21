@@ -1,0 +1,15 @@
+# Quick ChimeraX Viewer
+# Run with: chimerax dATP_variant_039_dATP_simple.cxc
+
+open /home/thinkingscopeanalysis/nucleotide_catchers/specificity_library/screening_results/dATP_variant_039_vs_dATP/boltz_results_dATP_variant_039_vs_dATP/predictions/dATP_variant_039_vs_dATP/dATP_variant_039_vs_dATP_model_0.cif
+preset publication
+color /A wheat
+color /B green
+show /B atoms
+style /B ball
+select /A & <5 /B
+color sel cyan
+show sel atoms
+style sel stick
+hbonds /A to /B
+view

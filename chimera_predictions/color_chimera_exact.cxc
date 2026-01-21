@@ -1,0 +1,63 @@
+# ChimeraX Script for Chimera Domain Coloring
+# Exact path for your AlphaFold prediction
+# Run with: chimerax color_chimera_exact.cxc
+
+# Open your AlphaFold structure
+open /Users/jeremylinsley/Documents/protein_modeling/alphaFoldStructures/test_a7de6/test_a7de6_unrelaxed_rank_002_alphafold2_ptm_model_1_seed_000.pdb
+
+# Setup
+preset "Overall Look" "publication 1"
+lighting soft
+set bgColor white
+hide atoms
+cartoon
+
+# ===== COLOR BY DOMAIN =====
+
+# Nanobody binder parts (CYAN)
+color /A:1-74 cyan
+color /A:342-388 cyan
+cartoon style /A:1-74,342-388 width 2.5 thick 1.0
+
+# DRONPA - Optogenetic switch (ORANGE)
+color /A:82-334 orange
+cartoon style /A:82-334 width 2.5 thick 1.0
+
+# CDR3 binding site (RED - highlighted!)
+color /A:363-369 red
+show /A:363-369 atoms
+style /A:363-369 stick
+cartoon style /A:363-369 width 3.0 thick 1.2
+
+# A-Catcher readout tag (GREEN)
+color /A:394-409 green
+cartoon style /A:394-409 width 2.0 thick 0.8
+
+# Linkers (GRAY)
+color /A:75-81,335-341,389-393 gray
+cartoon style /A:75-81,335-341,389-393 width 1.0 thick 0.5
+
+# Best view
+view
+
+# Optional: Color by AlphaFold confidence (pLDDT)
+# Uncomment the next line to see prediction confidence instead:
+# color byattribute bfactor palette alphafold
+
+# Print domain summary
+log text "=========================================="
+log text "CHIMERA DOMAIN COLORING COMPLETE"
+log text "=========================================="
+log text ""
+log text "CYAN:   Nanobody binder (res 1-74, 342-388)"
+log text "ORANGE: Dronpa optogenetic switch (res 82-334)"
+log text "RED:    CDR3 binding site (res 363-369) ← KEY!"
+log text "GREEN:  A-Catcher tag (res 394-409)"
+log text "GRAY:   Flexible linkers"
+log text ""
+log text "=========================================="
+log text "Look for:"
+log text "  • Orange Dronpa should form barrel/cylinder"
+log text "  • Red CDR3 loop should be accessible"
+log text "  • Cyan nanobody parts on either side"
+log text "=========================================="

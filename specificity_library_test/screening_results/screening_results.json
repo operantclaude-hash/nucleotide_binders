@@ -1,0 +1,350 @@
+{
+  "timestamp": "2026-01-08T15:39:40.369248",
+  "total_predictions": 10,
+  "successful": 10,
+  "failed": 0,
+  "total_time_seconds": 327.42123579978943,
+  "mode": "quick",
+  "results": [
+    {
+      "variant_id": "dATP_variant_000_WT",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dATP",
+      "is_target": true,
+      "mutations": "WT",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_000_WT_vs_dATP/boltz_results_dATP_variant_000_WT_vs_dATP",
+      "confidence": {
+        "confidence_score": 0.8153101205825806,
+        "ptm": 0.8815298676490784,
+        "iptm": 0.6442015767097473,
+        "ligand_iptm": 0.6442015767097473,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.8580871820449829,
+        "complex_iplddt": 0.659367561340332,
+        "complex_pde": 0.7737800478935242,
+        "complex_ipde": 2.601811408996582,
+        "chains_ptm": {
+          "0": 0.9475752711296082,
+          "1": 0.7291646599769592
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9475752711296082,
+            "1": 0.2659967541694641
+          },
+          "1": {
+            "0": 0.6442015767097473,
+            "1": 0.7291646599769592
+          }
+        }
+      },
+      "elapsed_time": 5.000111103057861
+    },
+    {
+      "variant_id": "dATP_variant_000_WT",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dGTP",
+      "is_target": false,
+      "mutations": "WT",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_000_WT_vs_dGTP/boltz_results_dATP_variant_000_WT_vs_dGTP",
+      "confidence": {
+        "confidence_score": 0.8569828271865845,
+        "ptm": 0.9026731252670288,
+        "iptm": 0.7254118323326111,
+        "ligand_iptm": 0.7254118323326111,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.889875590801239,
+        "complex_iplddt": 0.7391434907913208,
+        "complex_pde": 0.6712772250175476,
+        "complex_ipde": 2.093568801879883,
+        "chains_ptm": {
+          "0": 0.9534487128257751,
+          "1": 0.7749037742614746
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9534487128257751,
+            "1": 0.4584600031375885
+          },
+          "1": {
+            "0": 0.7254118323326111,
+            "1": 0.7749037742614746
+          }
+        }
+      },
+      "elapsed_time": 4.871096134185791
+    },
+    {
+      "variant_id": "dATP_variant_000_WT",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dCTP",
+      "is_target": false,
+      "mutations": "WT",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_000_WT_vs_dCTP/boltz_results_dATP_variant_000_WT_vs_dCTP",
+      "confidence": {
+        "confidence_score": 0.8310823440551758,
+        "ptm": 0.8945944309234619,
+        "iptm": 0.6728827953338623,
+        "ligand_iptm": 0.6728827953338623,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.8706322908401489,
+        "complex_iplddt": 0.6816191077232361,
+        "complex_pde": 0.7346934676170349,
+        "complex_ipde": 2.489924192428589,
+        "chains_ptm": {
+          "0": 0.9525774717330933,
+          "1": 0.7900041937828064
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9525774717330933,
+            "1": 0.40147310495376587
+          },
+          "1": {
+            "0": 0.6728827953338623,
+            "1": 0.7900041937828064
+          }
+        }
+      },
+      "elapsed_time": 40.07913684844971
+    },
+    {
+      "variant_id": "dATP_variant_000_WT",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dTTP",
+      "is_target": false,
+      "mutations": "WT",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_000_WT_vs_dTTP/boltz_results_dATP_variant_000_WT_vs_dTTP",
+      "confidence": {
+        "confidence_score": 0.7883594632148743,
+        "ptm": 0.8760210275650024,
+        "iptm": 0.587560772895813,
+        "ligand_iptm": 0.587560772895813,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.838559091091156,
+        "complex_iplddt": 0.5569784045219421,
+        "complex_pde": 0.7752468585968018,
+        "complex_ipde": 2.649336576461792,
+        "chains_ptm": {
+          "0": 0.9497926235198975,
+          "1": 0.7762106657028198
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9497926235198975,
+            "1": 0.30343446135520935
+          },
+          "1": {
+            "0": 0.587560772895813,
+            "1": 0.7762106657028198
+          }
+        }
+      },
+      "elapsed_time": 39.677024841308594
+    },
+    {
+      "variant_id": "dATP_variant_001",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dATP",
+      "is_target": true,
+      "mutations": "A97F,K98R",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_001_vs_dATP/boltz_results_dATP_variant_001_vs_dATP",
+      "confidence": {
+        "confidence_score": 0.8515996932983398,
+        "ptm": 0.9306502342224121,
+        "iptm": 0.786784291267395,
+        "ligand_iptm": 0.786784291267395,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.8678035140037537,
+        "complex_iplddt": 0.6775786280632019,
+        "complex_pde": 0.5385285019874573,
+        "complex_ipde": 1.5491831302642822,
+        "chains_ptm": {
+          "0": 0.9697730541229248,
+          "1": 0.7933207154273987
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9697730541229248,
+            "1": 0.5354191660881042
+          },
+          "1": {
+            "0": 0.786784291267395,
+            "1": 0.7933207154273987
+          }
+        }
+      },
+      "elapsed_time": 39.81237196922302
+    },
+    {
+      "variant_id": "dATP_variant_001",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dGTP",
+      "is_target": false,
+      "mutations": "A97F,K98R",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_001_vs_dGTP/boltz_results_dATP_variant_001_vs_dGTP",
+      "confidence": {
+        "confidence_score": 0.8309215903282166,
+        "ptm": 0.9069026112556458,
+        "iptm": 0.730857789516449,
+        "ligand_iptm": 0.730857789516449,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.8559375405311584,
+        "complex_iplddt": 0.6560392379760742,
+        "complex_pde": 0.6328081488609314,
+        "complex_ipde": 1.9486660957336426,
+        "chains_ptm": {
+          "0": 0.9573269486427307,
+          "1": 0.7907276749610901
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9573269486427307,
+            "1": 0.5176316499710083
+          },
+          "1": {
+            "0": 0.730857789516449,
+            "1": 0.7907276749610901
+          }
+        }
+      },
+      "elapsed_time": 39.87050223350525
+    },
+    {
+      "variant_id": "dATP_variant_001",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dCTP",
+      "is_target": false,
+      "mutations": "A97F,K98R",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_001_vs_dCTP/boltz_results_dATP_variant_001_vs_dCTP",
+      "confidence": {
+        "confidence_score": 0.864712655544281,
+        "ptm": 0.9287776350975037,
+        "iptm": 0.7849723100662231,
+        "ligand_iptm": 0.7849723100662231,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.8846476674079895,
+        "complex_iplddt": 0.7300363779067993,
+        "complex_pde": 0.5442957878112793,
+        "complex_ipde": 1.5245777368545532,
+        "chains_ptm": {
+          "0": 0.9666303396224976,
+          "1": 0.8185591101646423
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9666303396224976,
+            "1": 0.5749015212059021
+          },
+          "1": {
+            "0": 0.7849723100662231,
+            "1": 0.8185591101646423
+          }
+        }
+      },
+      "elapsed_time": 40.045974016189575
+    },
+    {
+      "variant_id": "dATP_variant_001",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dTTP",
+      "is_target": false,
+      "mutations": "A97F,K98R",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_001_vs_dTTP/boltz_results_dATP_variant_001_vs_dTTP",
+      "confidence": {
+        "confidence_score": 0.8251743316650391,
+        "ptm": 0.9024059176445007,
+        "iptm": 0.7242925763130188,
+        "ligand_iptm": 0.7242925763130188,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.8503947854042053,
+        "complex_iplddt": 0.660399854183197,
+        "complex_pde": 0.6666944622993469,
+        "complex_ipde": 2.0849034786224365,
+        "chains_ptm": {
+          "0": 0.9496201872825623,
+          "1": 0.8190217018127441
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9496201872825623,
+            "1": 0.48975133895874023
+          },
+          "1": {
+            "0": 0.7242925763130188,
+            "1": 0.8190217018127441
+          }
+        }
+      },
+      "elapsed_time": 39.76968264579773
+    },
+    {
+      "variant_id": "dATP_variant_002",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dATP",
+      "is_target": true,
+      "mutations": "C96Q,A97Y,K98R,Y101D",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_002_vs_dATP/boltz_results_dATP_variant_002_vs_dATP",
+      "confidence": {
+        "confidence_score": 0.8400789499282837,
+        "ptm": 0.8927904367446899,
+        "iptm": 0.6887624263763428,
+        "ligand_iptm": 0.6887624263763428,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.8779080510139465,
+        "complex_iplddt": 0.6904290914535522,
+        "complex_pde": 0.6961961388587952,
+        "complex_ipde": 2.1648690700531006,
+        "chains_ptm": {
+          "0": 0.9491382241249084,
+          "1": 0.751808762550354
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9491382241249084,
+            "1": 0.4160918891429901
+          },
+          "1": {
+            "0": 0.6887624263763428,
+            "1": 0.751808762550354
+          }
+        }
+      },
+      "elapsed_time": 39.07742476463318
+    },
+    {
+      "variant_id": "dATP_variant_002",
+      "target_nucleotide": "dATP",
+      "test_nucleotide": "dGTP",
+      "is_target": false,
+      "mutations": "C96Q,A97Y,K98R,Y101D",
+      "prediction_dir": "../specificity_library_test/screening_results/dATP_variant_002_vs_dGTP/boltz_results_dATP_variant_002_vs_dGTP",
+      "confidence": {
+        "confidence_score": 0.8182205557823181,
+        "ptm": 0.8771538138389587,
+        "iptm": 0.6730480194091797,
+        "ligand_iptm": 0.6730480194091797,
+        "protein_iptm": 0.0,
+        "complex_plddt": 0.8545135855674744,
+        "complex_iplddt": 0.6675317883491516,
+        "complex_pde": 0.7977610230445862,
+        "complex_ipde": 2.6718568801879883,
+        "chains_ptm": {
+          "0": 0.9361464381217957,
+          "1": 0.7404748201370239
+        },
+        "pair_chains_iptm": {
+          "0": {
+            "0": 0.9361464381217957,
+            "1": 0.3473290205001831
+          },
+          "1": {
+            "0": 0.6730480194091797,
+            "1": 0.7404748201370239
+          }
+        }
+      },
+      "elapsed_time": 39.211994886398315
+    }
+  ]
+}

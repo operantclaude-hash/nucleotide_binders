@@ -1,0 +1,4 @@
+Best Model: 0
+Confidence Score: 0.8860
+Ligand iPTM: 0.7985
+Structure: results/dATP_production/boltz_results_dATP_binder/predictions/dATP_binder/predictions_model_0.cif

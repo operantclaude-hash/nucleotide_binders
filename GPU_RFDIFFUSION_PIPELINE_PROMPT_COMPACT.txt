@@ -1,0 +1,92 @@
+OPTOGENETIC NUCLEOTIDE CATCHER DESIGN PIPELINE
+
+=== BACKGROUND ===
+
+Design 4 nanobodies that each bind ONE specific nucleotide (dATP, dGTP, dCTP, dTTP) and release it upon light stimulation. These work with an optogenetic TdT for programmable DNA synthesis.
+
+Challenge: No nucleotide-binding nanobodies exist. Need de novo design with RFdiffusion3.
+
+Spectral assignments:
+- TdT: PhyB (660nm on, 730nm off)
+- A-Catcher: LOV2 (450nm on, dark reset)
+- T-Catcher: CRY2 (488nm on, dark reset)
+- G-Catcher: BICYCL-Green (520nm on, 580nm off)
+- C-Catcher: BphP1 (750nm on, 650nm off)
+
+=== PIPELINE ===
+
+Step 1: RFdiffusion3 - Generate CDR backbone conformations around nucleotide
+        (Keep nanobody framework FIXED, redesign CDR loops de novo)
+        Output: ~100 backbones per nucleotide
+
+Step 2: LigandMPNN - Design amino acid sequences for backbones
+        Output: 8 sequences per backbone
+
+Step 3: Boltz-2 - Validate structure predictions
+        Metrics: confidence >0.80, pLDDT >70, ipTM >0.60
+
+Step 4: Specificity Screen - Test each design vs ALL 4 nucleotides
+        Calculate: specificity_ratio = target_score / max(off_target_scores)
+        Filter: ratio >1.5
+
+Step 5: Optodomain Insertion - Insert LOV2/CRY2/BphP1 at Loop 6 (~pos 74)
+        Linkers: GSGSGSG both sides
+
+Step 6: Final Validation - Predict chimera structures
+
+=== NUCLEOTIDE SMILES ===
+
+dATP: Nc1ncnc2c1ncn2[C@H]3C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O3
+dGTP: Nc1nc2c(ncn2[C@H]3C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O3)c(=O)[nH]1
+dCTP: Nc1ccn([C@H]2C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O2)c(=O)n1
+dTTP: Cc1cn([C@H]2C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O2)c(=O)[nH]c1=O
+
+=== CRITICAL VALIDATION ===
+
+MUST run these controls:
+1. Random sequence control - Should get LOW scores (if high, pipeline broken)
+2. Scaffold-only control - Baseline to beat
+3. Cross-nucleotide control - A-binder must NOT bind G,C,T equally
+4. Known binder control - Anti-caffeine VHH should score HIGH (positive control)
+
+Quality thresholds:
+- Confidence: >0.80 good, >0.90 excellent
+- ipTM: >0.75 good, >0.85 excellent
+- Specificity ratio: >1.5 good, >2.0 excellent
+
+=== SETUP ===
+
+conda create -n nuc_design python=3.11 -y
+conda activate nuc_design
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+pip install boltz[cuda] -U
+pip install biopython pandas numpy pyyaml pytest rdkit
+
+git clone https://github.com/RosettaCommons/RFdiffusion.git
+cd RFdiffusion && pip install -e .
+
+git clone https://github.com/dauparas/LigandMPNN.git
+cd LigandMPNN && pip install -e .
+
+=== TASKS ===
+
+1. Create directory structure at ~/nucleotide_catchers/
+2. Download nanobody scaffold PDB (3G9A)
+3. Create ligand SDF files from SMILES
+4. Write all pipeline scripts with proper error handling
+5. Run control experiments FIRST
+6. Run full pipeline for all 4 nucleotides
+7. Generate summary report with metrics
+8. Identify top candidates per nucleotide
+
+Use agents to parallelize: RFdiffusion can run 4 nucleotides in parallel if GPU memory allows.
+
+=== SUCCESS CRITERIA ===
+
+- At least 5 designs per nucleotide pass validation
+- At least 2 designs per nucleotide have specificity >1.5
+- Controls behave as expected
+- Final chimeras predicted to fold correctly
+- Loop 6 preserved for optogenetic insertion
+
+Report all metrics. Be honest about failures. Document everything.

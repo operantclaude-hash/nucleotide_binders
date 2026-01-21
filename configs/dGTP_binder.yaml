@@ -1,0 +1,22 @@
+# Boltz-2 configuration for dGTP binder structure prediction
+
+version: 1
+
+sequences:
+  - protein:
+      id: A
+      # Placeholder VHH scaffold - replace with designed sequence
+      sequence: >
+        QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKDRLSITIRPRYYGLDVWGQGTLVTVSS
+
+  # dGTP ligand - 2'-deoxyguanosine triphosphate
+  - ligand:
+      id: B
+      # SMILES notation for dGTP
+      smiles: 'Nc1nc2c(ncn2[C@H]3C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O3)c(=O)[nH]1'
+      # Alternative CCD code: DG
+
+# Note: dGTP has an extra carbonyl oxygen and NH compared to dATP
+# Key discriminating features:
+#   - 6-oxo group (C=O) on guanine vs amino group on adenine
+#   - 2-amino group on guanine

@@ -1,0 +1,42 @@
+# Boltz-2 configuration for dATP binder structure prediction
+# This file is used for predicting structures of designed dATP-binding proteins
+
+version: 1
+
+# Example: Predict structure of a designed nanobody with dATP
+sequences:
+  # Protein sequence - replace with your designed VHH sequence
+  - protein:
+      id: A
+      # Placeholder: Anti-caffeine VHH as starting scaffold (shows small molecule binding capability)
+      # Replace with RFdiffusion3/LigandMPNN designed sequence
+      sequence: >
+        QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKDRLSITIRPRYYGLDVWGQGTLVTVSS
+      # Use MSA server for better predictions
+      # msa: empty  # Uncomment for single-sequence mode (not recommended)
+
+  # dATP ligand - 2'-deoxyadenosine triphosphate
+  - ligand:
+      id: B
+      # SMILES notation for dATP
+      smiles: 'Nc1ncnc2c1ncn2[C@H]3C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O3'
+      # Alternative: Use CCD code if available in PDB
+      # ccd: DA
+
+# Optional: Affinity prediction (Boltz-2 feature)
+# properties:
+#   affinity:
+#     ligand: B
+#     protein: A
+
+# Optional: Pocket constraints to guide binding site
+# constraints:
+#   - pocket:
+#       binder: A
+#       contacts: [B]
+#       max_distance: 6.0  # Angstroms from ligand
+
+# Notes:
+# - Run with: boltz predict dATP_binder.yaml --use_msa_server
+# - Output will be in boltz_results/ directory
+# - For batch processing, put multiple YAML files in a directory

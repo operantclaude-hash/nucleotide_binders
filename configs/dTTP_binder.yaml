@@ -1,0 +1,23 @@
+# Boltz-2 configuration for dTTP binder structure prediction
+
+version: 1
+
+sequences:
+  - protein:
+      id: A
+      # Placeholder VHH scaffold - replace with designed sequence
+      sequence: >
+        QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKDRLSITIRPRYYGLDVWGQGTLVTVSS
+
+  # dTTP ligand - 2'-deoxythymidine triphosphate
+  - ligand:
+      id: B
+      # SMILES notation for dTTP
+      smiles: 'Cc1cn([C@H]2C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O2)c(=O)[nH]c1=O'
+      # Alternative CCD code: DT
+
+# Note: dTTP is a pyrimidine with 5-methyl group
+# Key discriminating features:
+#   - 5-methyl group (unique among the 4 bases)
+#   - 2,4-dioxo groups (no amino group, unlike dCTP)
+#   - Pyrimidine (single ring)

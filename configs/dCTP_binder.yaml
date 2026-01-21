@@ -1,0 +1,23 @@
+# Boltz-2 configuration for dCTP binder structure prediction
+
+version: 1
+
+sequences:
+  - protein:
+      id: A
+      # Placeholder VHH scaffold - replace with designed sequence
+      sequence: >
+        QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKDRLSITIRPRYYGLDVWGQGTLVTVSS
+
+  # dCTP ligand - 2'-deoxycytidine triphosphate
+  - ligand:
+      id: B
+      # SMILES notation for dCTP
+      smiles: 'Nc1ccn([C@H]2C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O2)c(=O)n1'
+      # Alternative CCD code: DC
+
+# Note: dCTP is a pyrimidine (6-membered ring only)
+# Key discriminating features vs purines (dATP, dGTP):
+#   - Single ring vs fused bicyclic ring system
+#   - 4-amino group
+#   - 2-oxo group

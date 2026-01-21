@@ -1,0 +1,64 @@
+Set up and run a nucleotide binder design pipeline for optogenetically-controlled nanobodies.
+
+PROJECT GOAL: Design nanobodies that bind specific dNTPs (dATP, dGTP, dCTP, dTTP) and release them upon light stimulation.
+
+STEP 1 - ENVIRONMENT SETUP:
+Create directory ~/nucleotide_catchers with subdirs: structures, configs, scripts, outputs
+Create conda env "nucleotide_design" with python 3.11
+Install: boltz[cuda], torch with cuda support
+Check GPU with: python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'No GPU')"
+
+STEP 2 - DOWNLOAD PDB STRUCTURES:
+Fetch these PDB IDs into structures/: 2V0U (AsLOV2), 3G9A (nanobody scaffold), 3T04 (monobody), 6IR1 (LaM4-mCherry)
+Use: curl -O https://files.rcsb.org/download/XXXX.pdb
+
+STEP 3 - CREATE BOLTZ CONFIGS:
+Create configs/dNTP_binder.yaml files for each nucleotide with these SMILES:
+- dATP: Nc1ncnc2c1ncn2[C@H]3C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O3
+- dGTP: Nc1nc2c(ncn2[C@H]3C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O3)c(=O)[nH]1
+- dCTP: Nc1ccn([C@H]2C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O2)c(=O)n1
+- dTTP: Cc1cn([C@H]2C[C@H](O)[C@@H](COP(O)(=O)OP(O)(=O)OP(O)(O)=O)O2)c(=O)[nH]c1=O
+
+Use this template nanobody as placeholder: QVQLVESGGGLVQPGGSLRLSCAASGFTFSSYAMSWVRQAPGKGLEWVSAISGSGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKDRLSITIRPRYYGLDVWGQGTLVTVSS
+
+STEP 4 - CREATE DESIGN SCRIPTS:
+Create scripts/design_nucleotide_binders.py that:
+1. Generates RFdiffusion configs for each nucleotide (if RFdiffusion available)
+2. Creates LigandMPNN commands for sequence design
+3. Runs Boltz for validation
+4. Scores selectivity (test each design against all 4 nucleotides)
+5. Filters for >10-fold selectivity
+
+Create scripts/insert_optodomain.py that inserts optogenetic domains at Loop 6 (~position 74):
+- A-Catcher: LOV2 (131 aa) - 450nm activation
+- T-Catcher: CRY2 (498 aa) - 488nm activation
+- G-Catcher: BICYCL-Green - 520nm activation
+- C-Catcher: BphP1 (200 aa) - 750nm activation
+
+Use GSGSGSG linkers on both sides of insertion.
+
+STEP 5 - RUN BOLTZ TEST:
+Test: boltz predict configs/dATP_binder.yaml --use_msa_server --out_dir outputs/boltz_test
+Verify it produces predicted structures.
+
+STEP 6 - CHECK FOR RFDIFFUSION:
+Try to install RFdiffusion3 from https://github.com/RosettaCommons/RFdiffusion
+If not available, generate instructions for using Tamarind.bio online.
+
+STEP 7 - GENERATE INITIAL DESIGNS:
+Run the pipeline to generate at least 10 binder designs per nucleotide.
+Score each against all 4 nucleotides for selectivity.
+Output top 5 most selective designs per nucleotide.
+
+STEP 8 - CREATE CHIMERAS:
+Insert optogenetic domains into top designs.
+Predict chimera structures with Boltz or ColabFold.
+Save all outputs organized by nucleotide and catcher type.
+
+STEP 9 - GENERATE PYMOL VISUALIZATION:
+Create .pml scripts to visualize:
+- Reference structures (2V0U, 3G9A)
+- Designed binding pockets
+- Chimera structures with optogenetic domains
+
+Start with Step 1 and proceed sequentially, verifying each step works before continuing. Report any errors and attempt to resolve them.

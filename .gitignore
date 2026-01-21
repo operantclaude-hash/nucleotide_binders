@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large files (model weights, etc.)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+weights/
+models/
+
+# Output files (large, regeneratable)
+outputs/step*/
+*.a3m
+*.sto
+
+# Keep results but ignore intermediate outputs
+!results/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
